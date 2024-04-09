@@ -1,0 +1,16 @@
+{
+    "name": "TenonKit.Rhyme.Sample",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4f781fcc255734e33ace571d808c8dc0"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

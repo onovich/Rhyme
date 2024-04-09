@@ -1,0 +1,19 @@
+{
+    "name": "com.tenon.rhyme",
+    "version": "0.0.0",
+    "unity": "2019.4",
+    "author": {
+        "name": "onovich",
+        "email": "onovich1110@gmail.com"
+    },
+    "displayName": "TenonKit.Rhyme",
+    "description": "A Game Dialogue Library.",
+    "documentationURL": "https://github.com/onovich/Rhyme",
+    "hideInEditor": false,
+    "category": "Dialogue",
+    "keywords": [
+        "TenonKit",
+        "dialogue"
+    ],
+    "unityRelease": "16f1"
+}
