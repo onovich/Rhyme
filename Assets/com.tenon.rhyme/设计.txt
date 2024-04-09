@@ -1,0 +1,28 @@
+# 架构关系
+剧情系统包含：演出系统、对话系统、上下文管理系统
+演出系统包含: 动画管理、剧情触发、相机管理、各种回调等等
+上下文管理系统包含：对话节点状态、对话树
+当前库是对话系统
+
+# 设计理念
+不包含 UI, 只提供控制流, UI 应由上层实现
+
+# 对话系统设计
+## API
+* Speak(string content, string speaker = null, string avatar = null, bool typewriter = false, floatt typewriterSpeed = 0)
+* Continue(int id)
+
+## FSM Tick
+* FadeIn
+* Speaking
+* FadeOut
+
+## 转义符
+* 颜色
+* 字重 / 字号 / 加粗
+* 停顿
+* 动作回调: 屏震 / Avatar 表情演出...
+
+## 优化
+* 字符串优化
+* 无 GC 化
