@@ -1,0 +1,4 @@
+ID,Desc,ZH_CN,ZH_TW,EN_US,JA
+100,NPC_1,1号配角,1號配角,1st NPC,1番目のNPC
+TypeID,SentenceIndex,OptionIndex,ZH_CN,ZH_TW,EN_US,JA
+10,0,0,对白1,對白1,Dialogue 1,ダイアローグ1
