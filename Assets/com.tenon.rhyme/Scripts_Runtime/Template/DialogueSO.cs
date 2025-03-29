@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace TenonKit.Rhyme {
 
-    [CreateAssetMenu(fileName = "SO_Sheet_", menuName = "Rhyme/Sheet")]
-    public class SheetSO : ScriptableObject {
+    [CreateAssetMenu(fileName = "SO_Dialogue_", menuName = "Rhyme/Dialogue")]
+    public class DialogueSO : ScriptableObject {
 
         public int l10nID;
         public float playingSpeed;

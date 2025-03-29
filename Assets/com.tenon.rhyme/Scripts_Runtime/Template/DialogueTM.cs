@@ -2,9 +2,9 @@ using System;
 
 namespace TenonKit.Rhyme {
 
-    public struct Sheet {
+    public struct DialogueTM {
 
-        public char[] content;
+        public int dialogueL10nID;
         public float playingSpeed;
 
     }

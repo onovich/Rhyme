@@ -1,3 +1,6 @@
+using TenonKit.Rhyme.L10N;
+using UnityEngine;
+
 namespace TenonKit.Rhyme {
 
     public class DialogueCore {
@@ -8,21 +11,36 @@ namespace TenonKit.Rhyme {
             ctx = new DialogueContext();
         }
 
-        // public void SetContent(string content, float interval = 0) {
-        //     var sheet = new Sheet {
-        //         content = content,
-        //         interval = interval
-        //     };
-        //     ctx.Player.SetSheet(sheet);
-        //     ctx.Player.EnterPlaying();
-        // }
-
-        // public char GetCurrentContent() {
-        //     // return ctx.Player.GetCurrentContent();
-        // }
-
         public void Tick(float dt) {
-            ctx.Player.ApplyPlay(dt);
+            var state = ctx.state;
+            if (!state.dialogue_isPlaying) {
+                return;
+            }
+
+            var dialogue = state.dialogue_current;
+
+            // Tick Sentence
+            var speed = dialogue.playingSpeed;
+            state.sentence_currentTime += dt;
+            state.sentence_currentTime = Mathf.FloorToInt(state.sentence_currentTime / speed);
+
+            // Tick Char
+            if (state.sentence_currentCharIndex >= state.Char_GetAll().Length) {
+                state.Sentence_Next((currentSentence) => GetNextSentence(currentSentence));
+            } else {
+                state.Char_Next();
+            }
+
+        }
+
+        SentenceModel GetNextSentence(SentenceModel currentSentence) {
+            return ctx.Sentence_Get(currentSentence.dialogueL10nID, currentSentence.nextIndex);
+        }
+
+        public void CreateDialogue(DialogueContext ctx, DialogueTM tm) {
+            DialogueEntity dialogue = new DialogueEntity();
+            dialogue.dialogueL10nID = tm.dialogueL10nID;
+            dialogue.playingSpeed = tm.playingSpeed;
         }
 
     }
