@@ -5,15 +5,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using NReco.Csv;
+using UnityEditor;
 
-namespace TenonKit.Rhyme.L10N {
+namespace TenonKit.Rhyme.L10n {
 
-    public class L10N {
+    public class L10NCore {
 
         L10NLangType currentLangType;
         Dictionary<L10NLangType, L10NLangEntity> all;
 
-        public L10N() {
+        public L10NCore() {
             all = new Dictionary<L10NLangType, L10NLangEntity>();
             currentLangType = L10NLangType.ZH_CN;
         }
@@ -22,16 +23,16 @@ namespace TenonKit.Rhyme.L10N {
             currentLangType = langType;
         }
 
-        public L10NLangType GetCurrentL10nLangType() {
+        public L10NLangType GetCurrentL10NLangType() {
             return currentLangType;
         }
 
         public void Init() {
             InitEntities();
-            LoadCustomCSV("L10N_Speaker", (entity, id, text) => {
-                entity.Speader_Add(id, text);
-            });
-            LoadDialogueCSV("L10N_DialogueNew");
+            // LoadCustomCSV("L10N_Speaker", (entity, id, text) => {
+            //     entity.Speader_Add(id, text);
+            // });
+            LoadDialogueCSV("L10N_Dialogue");
         }
 
         void InitEntities() {
@@ -88,12 +89,12 @@ namespace TenonKit.Rhyme.L10N {
                 for (int i = 2; i < reader.FieldsCount; i += 1) {
                     bool has = dict.TryGetValue(i, out var langType);
                     if (!has) {
-                        Debug.LogWarning($"L10n.Init: langType not found: {i}, {reader[i]}; id: {id}");
+                        Debug.LogWarning($"L10N.Init: langType not found: {i}, {reader[i]}; id: {id}");
                         continue;
                     }
                     has = all.TryGetValue(langType, out var entity);
                     if (!has) {
-                        Debug.LogWarning($"L10n.Init: langType not found: {langType.ToString()}, {reader[i]}; id: {id}");
+                        Debug.LogWarning($"L10N.Init: langType not found: {langType.ToString()}, {reader[i]}; id: {id}");
                         continue;
                     }
                     string text = reader[i];
@@ -173,12 +174,12 @@ namespace TenonKit.Rhyme.L10N {
                 for (int i = 3; i < reader.FieldsCount; i += 1) {
                     bool has = dict.TryGetValue(i, out var langType);
                     if (!has) {
-                        Debug.LogWarning($"L10n.Init: langType not found: {i}, {reader[i]}; id: {typeID}");
+                        Debug.LogWarning($"L10N.Init: langType not found: {i}, {reader[i]}; id: {typeID}");
                         continue;
                     }
                     has = all.TryGetValue(langType, out var entity);
                     if (!has) {
-                        Debug.LogWarning($"L10n.Init: langType not found: {langType.ToString()}, {reader[i]}; id: {typeID}");
+                        Debug.LogWarning($"L10N.Init: langType not found: {langType.ToString()}, {reader[i]}; id: {typeID}");
                         continue;
                     }
                     string text = reader[i];
@@ -222,7 +223,7 @@ namespace TenonKit.Rhyme.L10N {
                 has = all.TryGetValue(L10NLangType.ZH_CN, out entity);
             }
             if (!has) {
-                Debug.LogError($"L10n.GetFallbackEntity: langType not found: {l10NLangType}");
+                Debug.LogError($"L10N.GetFallbackEntity: langType not found: {l10NLangType}");
             }
             return entity;
         }
@@ -251,7 +252,7 @@ namespace TenonKit.Rhyme.L10N {
                 entity.Speader_TryGet(key, out var str);
                 return str;
             } else {
-                Debug.LogError($"L10n.GetLangDesc: langType not found: {langType}");
+                Debug.LogError($"L10N.GetLangDesc: langType not found: {langType}");
                 return null;
             }
         }

@@ -1,4 +1,4 @@
-namespace TenonKit.Rhyme.L10N {
+namespace TenonKit.Rhyme.L10n {
 
     public enum L10NLangType {
         ZH_CN = 0,

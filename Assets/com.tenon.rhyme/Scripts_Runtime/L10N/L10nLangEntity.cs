@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace TenonKit.Rhyme.L10N {
+namespace TenonKit.Rhyme.L10n {
 
     public class L10NLangEntity {
 

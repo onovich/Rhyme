@@ -1,2 +1,11 @@
 TypeID,SentenceIndex,OptionIndex,ZH_CN,ZH_TW,EN_US,JA
-10,0,0,对白1,對白1,Dialogue 1,ダイアローグ1
+10,0,0,你好，旅行者！今天的天气真不错。,你好，旅行者！今天的天氣真不錯。,Hello traveler! The weather is lovely today.,こんにちは、旅人さん！今日はいい天気ですね。
+10,1,0,城堡里藏着珍贵的宝藏，但要小心守卫。,城堡裡藏著珍貴的寶藏，但要小心守衛。,The castle hides precious treasures` but be careful of the guards.,お城には貴重な宝物が隠されていますが、警備員に注意してください。
+10,2,0,你这样的对手，我三招就能解决！,你這樣的對手，我三招就能解決！,An opponent like you? I can take you down in three moves!,あなたのような相手なら、3回の動きで倒せます！
+10,3,0,这把剑售价500金币，物超所值！,这把劍售價500金幣，物超所值！,This sword is priced at 500 gold coins` a great deal!,この剣は500ゴールドで、非常にお得です！
+10,4,0,快离开这里！森林夜晚会出现狼人！,快離開這裡！森林夜晚會出現狼人！,Get out of here! Werewolves appear in the forest at night!,ここから離れて！森の中には夜に狼男が現れます！
+10,5,0,按“日月星”的顺序点亮石碑。,按“日月星”的順序點亮石碑。,Light up the stone tablet in the order of "Sun` Moon` Star".,石碑を「太陽、月、星」の順に点灯させてください。
+10,6,0,你看起来很强，要和我比试一下吗？,你看起來很強，要和我比試一下嗎？,You look strong. Want to spar with me?,あなたは強そうですね。私と戦ってみませんか？
+10,7,0,十年前那场战争改变了整个王国…,十年前那場戰爭改變了整個王國…,The war ten years ago changed the entire kingdom...,10年前の戦争は王国全体を変えました…
+10,8,0,我在这里守护着这片土地。,我在這裡守護著這片土地。,I guard this land.,私はこの土地を守っています。
+10,9,0,我们成功了！黑暗势力被彻底消灭了！,我們成功了！黑暗勢力被徹底消滅了！,We did it! The dark forces have been completely eliminated!,私たちは成功しました！暗黒勢力は完全に排除されました！

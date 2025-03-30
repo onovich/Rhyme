@@ -2,12 +2,14 @@ using System;
 
 namespace TenonKit.Rhyme {
 
-    public class SentenceModel {
+    public struct SentenceModel {
 
-        public int dialogueL10nID;
+        public int l10nID;
         public short index;
         public short nextIndex;
         public bool isEnd;
+        public bool isTypewriter;
+        public float playingSpeed;
 
     }
 

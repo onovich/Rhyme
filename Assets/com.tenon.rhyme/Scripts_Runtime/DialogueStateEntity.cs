@@ -1,12 +1,11 @@
 using System;
-using TenonKit.Rhyme.L10N;
+using TenonKit.Rhyme.L10n;
 
 namespace TenonKit.Rhyme {
 
     public class DialogueStateEntity {
 
         // Dialogue
-        public DialogueEntity dialogue_current;
         public bool dialogue_isPlaying;
 
         // Sentence
@@ -19,16 +18,13 @@ namespace TenonKit.Rhyme {
         }
 
         // Dialogue
-        public void Dialogue_Enter(DialogueEntity dialogue, SentenceModel sentence) {
-            dialogue_current = dialogue;
-            dialogue_isPlaying = false;
+        public void Dialogue_Enter(SentenceModel sentence) {
+            dialogue_isPlaying = true;
             sentence_current = sentence;
         }
 
         public void Dialogue_Exit() {
             dialogue_isPlaying = false;
-            dialogue_current = null;
-            sentence_current = null;
         }
 
         // Sentence
@@ -38,27 +34,30 @@ namespace TenonKit.Rhyme {
             sentence_currentTime = 0;
         }
 
-        public void Sentence_Next(Func<SentenceModel, SentenceModel> getNextSentence) {
-            if (sentence_current == null) {
-                return;
-            }
-            if (sentence_current.isEnd) {
-                Dialogue_Exit();
-                return;
-            }
-            sentence_current = getNextSentence(sentence_current);
-        }
-
         // Char
-        public void Char_Next() {
+        public void Char_Next(Action<int> onCharIndex) {
+            if (!dialogue_isPlaying) {
+                return;
+            }
+            if (sentence_currentCharIndex >= Char_GetLenth()) {
+                return;
+            }
+            onCharIndex?.Invoke(sentence_currentCharIndex);
             sentence_currentCharIndex++;
         }
 
-        public string Char_GetAll() {
-            if (sentence_current == null) {
+        public void Char_End() {
+            if (!dialogue_isPlaying) {
+                return;
+            }
+            sentence_currentCharIndex = Char_GetLenth() - 1;
+        }
+
+        public int Char_GetLenth() {
+            if (!dialogue_isPlaying) {
                 return default;
             }
-            return L10nUtil.GetL10nString_Sentence(dialogue_current, sentence_current.index);
+            return L10NUtil.GetL10NString_Sentence(sentence_current.l10nID, sentence_current.index).Length;
         }
 
     }

@@ -2,7 +2,8 @@
     "name": "TenonKit.Rhyme.Sample",
     "rootNamespace": "",
     "references": [
-        "GUID:4f781fcc255734e33ace571d808c8dc0"
+        "GUID:4f781fcc255734e33ace571d808c8dc0",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

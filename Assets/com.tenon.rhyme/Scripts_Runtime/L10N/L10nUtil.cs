@@ -1,14 +1,11 @@
 using TenonKit.Rhyme;
 
-namespace TenonKit.Rhyme.L10N {
+namespace TenonKit.Rhyme.L10n {
 
-    public static class L10nUtil {
-        public static L10N l10n;
-        public static string GetL10nString_Sentence(DialogueEntity dialogue, short sentenceIndex) {
-            if (dialogue == null) {
-                return default;
-            }
-            return l10n.Dialogue_GetSentence(dialogue.dialogueL10nID, sentenceIndex);
+    public static class L10NUtil {
+        public static L10NCore l10n;
+        public static string GetL10NString_Sentence(int l10nID, short sentenceIndex) {
+            return l10n.Dialogue_GetSentence(l10nID, sentenceIndex);
         }
     }
 
