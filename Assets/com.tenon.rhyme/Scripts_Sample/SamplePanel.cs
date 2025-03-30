@@ -37,6 +37,11 @@ namespace TenonKit.Rhyme {
             Destroy(gameObject);
         }
 
+        bool IsTextOverflowing() {
+            return text.isTextOverflowing;
+            // return textComponent.textInfo.lineCount > textComponent.maxVisibleLines;
+        }
+
     }
 
 }
