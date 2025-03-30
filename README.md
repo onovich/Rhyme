@@ -6,5 +6,5 @@ Its goals are to:</br>
 **目标：**
 * Decouple from UI </br> **与UI解耦**
 * Support Localization </br> **支持本地化**
-* Optimize performance to the extreme </br>**支持各类复杂演出效果**
+* Optimize performance to the extreme </br>**尽可能优化性能到极致**
 * Support all kinds of complex presentation effects </br>**支持各类复杂演出效果**
